@@ -65,9 +65,40 @@
     [keychainItem setObject:value forKey:(id)kSecAttrComment];
 }
 
-
 - (void)reset:(id)args {
     [keychainItem resetKeychainItem];
+}
+
+- (void)setSecurityArribute:(NSString *)attribute {
+    [keychainItem setObject:attribute forKey:kSecValueData];
+}
+
+- (void)setSecurityArributeAccessableAlways {
+    [self setSecurityArribute:kSecAttrAccessibleAlways];
+}
+
+- (void)setSecurityArributeAccessibleAfterFirstUnlockThisDeviceOnly {
+    [self setSecurityArribute:kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly];
+}
+
+- (void)setSecurityArributeAccessibleAfterFirstUnlock {
+    [self setSecurityArribute:kSecAttrAccessibleAfterFirstUnlock];
+}
+
+- (void)setSecurityArributeAccessibleWhenPasscodeSetThisDeviceOnly {
+    [self setSecurityArribute:kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly];
+}
+
+- (void)setSecurityArributeAccessibleAlwaysThisDeviceOnly {
+    [self setSecurityArribute:kSecAttrAccessibleAlwaysThisDeviceOnly];
+}
+
+- (void)setSecurityArributeAccessibleWhenUnlocked {
+    [self setSecurityArribute:kSecAttrAccessibleWhenUnlocked];
+}
+
+- (void)setSecurityArributeAccessibleWhenUnlockedThisDeviceOnly {
+    [self setSecurityArribute:kSecAttrAccessibleWhenUnlockedThisDeviceOnly];
 }
 
 @end
